@@ -22,9 +22,7 @@ const heartImages = [
     heart.style.height = `${size}px`;
   
     // Center-align the horizontal position
-    const centerX = window.innerWidth / 2; // Center of the screen
-    const spread = 300; // Spread of the hearts around the center (adjust as needed)
-    const x = Math.random() * spread - spread / 2 + centerX; // Randomize within the spread
+    const x = Math.random() * window.innerWidth; // Randomize within the spread
     heart.style.left = `${x}px`;
   
     // Randomize vertical start position slightly above the top
