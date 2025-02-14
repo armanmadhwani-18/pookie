@@ -17,10 +17,11 @@ const heartImages = [
     const randomHeartImage = heartImages[Math.floor(Math.random() * heartImages.length)];
     heart.style.backgroundImage = `url(${randomHeartImage})`;
   
-    const size = Math.random() * 100 + 130; // Random size between 20px and 50px
+    const size = Math.random() * 130 + 150; // Random size between 20px and 50px
     heart.style.width = `${size}px`;
     heart.style.height = `${size}px`;
   
+    // Randomize position across the full width of the screen
     const x = Math.random() * window.innerWidth;
     heart.style.left = `${x}px`;
   
@@ -35,5 +36,7 @@ const heartImages = [
     }, duration * 1000);
   }
   
-  // Generate hearts continuously
-  setInterval(createHeart, 200);
+  // Start generating hearts as soon as the page loads
+  window.addEventListener('load', () => {
+    setInterval(createHeart, 200); // Generate hearts continuously
+  });

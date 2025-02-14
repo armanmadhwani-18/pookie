@@ -13,6 +13,7 @@
     height: 100vh;
     text-align: center;
     overflow: hidden;
+    position: relative; /* Needed for positioning the heart container */
   }
   
   .container {
@@ -22,6 +23,7 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
     position: relative;
+    z-index: 2; /* Ensure the container is above the heart animation */
     width: 500px; /* Fixed width for the container */
   }
   
@@ -37,14 +39,16 @@
     margin-bottom: 30px;
   }
   
-  /* Heart Animation */
+  /* Heart Animation Container */
   .heart-container {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw; /* Cover the full viewport width */
+    height: 100vh; /* Cover the full viewport height */
     pointer-events: none; /* Ensure hearts don't interfere with clicks */
+    overflow: hidden;
+    z-index: 1; /* Place behind the main container */
   }
   
   .heart {
