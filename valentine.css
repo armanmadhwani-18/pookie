@@ -18,18 +18,19 @@
   
   .container {
     background: #fff;
-    padding: 40px;
+    padding: 20px;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
     position: relative;
     z-index: 2; /* Ensure the container is above the heart animation */
-    width: 500px;
-    height: 370px; /* Fixed width for the container */
+    width: 350px; /* Adjusted width to fit the resized GIF */
+    height: auto; /* Height adjusts automatically based on content */
   }
   
   .valentine-gif {
-    width: 200px;
+    width: 250px; /* Resized GIF to fit within the container */
+    height: auto; /* Maintain aspect ratio */
     margin-bottom: 20px;
     border-radius: 10px;
   }
@@ -45,8 +46,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 1536; /* Cover the full viewport width */
-    height: 476; /* Cover the full viewport height */
+    width: 100vw; /* Cover the full viewport width */
+    height: 100vh; /* Cover the full viewport height */
     pointer-events: none; /* Ensure hearts don't interfere with clicks */
     overflow: hidden;
     z-index: 1; /* Place behind the main container */
