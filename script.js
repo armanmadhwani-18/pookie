@@ -30,7 +30,7 @@ function getRandomPosition(containerRect, noButtonRect, yesButtonRect) {
   
     // Set the "No" button's initial position just to the right of the "Yes" button
     const initialX = yesButtonRect.right + 10; // Add a 10px gap
-    const initialY = yesButtonRect.top;
+    const initialY = yesButtonRect.top - 400;
   
     // Ensure the "No" button stays within the container
     const containerRect = container.getBoundingClientRect();
