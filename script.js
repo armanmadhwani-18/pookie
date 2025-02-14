@@ -34,13 +34,10 @@ function getRandomPosition(containerRect, noButtonRect, yesButtonRect) {
     yesButton.style.top = '260px'; // Vertically center
   
     // Position the "No" button just beside the "Yes" button with a small gap
-    const yesButtonRect = yesButton.getBoundingClientRect();
-    const initialX = '210px'; // Add a 10px gap
-    const initialY = '240px';
-  
+    
     noButton.style.position = 'absolute';
-    noButton.style.left = `${initialX}px`;
-    noButton.style.top = `${initialY}px`;
+    noButton.style.left = '160px'; // 40px from the left
+    noButton.style.top = '260px';
   }
   
   // Add event listener to "No" button
