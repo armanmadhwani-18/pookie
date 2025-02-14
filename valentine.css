@@ -44,8 +44,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 1920px; /* Cover the full viewport width */
-    height: 1080px; /* Cover the full viewport height */
+    width: 100wh; /* Cover the full viewport width */
+    height: 100vh; /* Cover the full viewport height */
     pointer-events: none; /* Ensure hearts don't interfere with clicks */
     overflow: hidden;
     z-index: 1; /* Place behind the main container */
