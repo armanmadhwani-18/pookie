@@ -24,7 +24,8 @@
     text-align: center;
     position: relative;
     z-index: 2; /* Ensure the container is above the heart animation */
-    width: 500px; /* Fixed width for the container */
+    width: 500px;
+    height: 370px; /* Fixed width for the container */
   }
   
   .valentine-gif {
@@ -48,7 +49,7 @@
     height: 100vh; /* Cover the full viewport height */
     pointer-events: none; /* Ensure hearts don't interfere with clicks */
     overflow: hidden;
-    z-index: 1; /* Place behind the main container */
+    z-index: 2; /* Place behind the main container */
   }
   
   .heart {
