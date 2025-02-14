@@ -17,16 +17,14 @@ const heartImages = [
     const randomHeartImage = heartImages[Math.floor(Math.random() * heartImages.length)];
     heart.style.backgroundImage = `url(${randomHeartImage})`;
   
-    const size = Math.random() * 110 + 20; // Random size between 20px and 130px
+    const size = Math.random() * 130 + 20; // Random size between 20px and 130px
     heart.style.width = `${size}px`;
     heart.style.height = `${size}px`;
   
-    // Randomize position across the full width of the screen
+    // Randomize position across the full width and height of the screen
     const x = Math.random() * (window.innerWidth - size); // Ensure hearts fit within the screen width
-    heart.style.left = `${x}px`;
-  
-    // Randomize vertical start position slightly above the top
     const y = Math.random() * -100 - 50; // Start slightly above the top
+    heart.style.left = `${x}px`;
     heart.style.top = `${y}px`;
   
     const duration = Math.random() * 5 + 3; // Random duration between 3s and 8s
