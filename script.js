@@ -19,6 +19,26 @@ function getRandomPosition(containerRect, noButtonRect, yesButtonRect) {
     return { x: randomX, y: randomY };
   }
   
+  // Set initial position for the "No" button
+  function setInitialNoButtonPosition() {
+    const container = document.querySelector('.container');
+    const noButton = document.getElementById('noButton');
+    const yesButton = document.getElementById('yesButton');
+  
+    // Get the dimensions of the container, "No" button, and "Yes" button
+    const containerRect = container.getBoundingClientRect();
+    const noButtonRect = noButton.getBoundingClientRect();
+    const yesButtonRect = yesButton.getBoundingClientRect();
+  
+    // Generate a safe initial position for the "No" button
+    const position = getRandomPosition(containerRect, noButtonRect, yesButtonRect);
+  
+    // Set the initial position
+    noButton.style.position = 'absolute';
+    noButton.style.left = `${position.x}px`;
+    noButton.style.top = `${position.y}px`;
+  }
+  
   // Add event listener to "No" button
   const noButton = document.getElementById('noButton');
   const yesButton = document.getElementById('yesButton');
@@ -49,4 +69,9 @@ function getRandomPosition(containerRect, noButtonRect, yesButtonRect) {
     setTimeout(() => {
       window.location.href = 'valentine.html';
     }, 3000); // 3 seconds delay
+  });
+  
+  // Set the initial position of the "No" button when the page loads
+  window.addEventListener('load', () => {
+    setInitialNoButtonPosition();
   });
