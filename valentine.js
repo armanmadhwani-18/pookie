@@ -17,7 +17,7 @@ const heartImages = [
     const randomHeartImage = heartImages[Math.floor(Math.random() * heartImages.length)];
     heart.style.backgroundImage = `url(${randomHeartImage})`;
   
-    const size = Math.random() * 180 + 200; // Random size between 20px and 130px
+    const size = Math.random() * 30 + 200; // Random size between 20px and 130px
     heart.style.width = `${size}px`;
     heart.style.height = `${size}px`;
   
