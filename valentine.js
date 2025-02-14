@@ -29,7 +29,7 @@ const heartImages = [
     const y = Math.random() * -100 - 50; // Start slightly above the top
     heart.style.top = `${y}px`;
   
-    const duration = Math.random() * 5 + 3; // Random duration between 3s and 8s
+    const duration = Math.random() * 5 + 5; // Random duration between 3s and 8s
     heart.style.animationDuration = `${duration}s`;
   
     container.appendChild(heart);
