@@ -36,7 +36,7 @@ function getRandomPosition(containerRect, noButtonRect, yesButtonRect) {
     // Position the "No" button just beside the "Yes" button with a small gap
     
     noButton.style.position = 'absolute';
-    noButton.style.left = '160px'; // 40px from the left
+    noButton.style.left = '220px'; // 40px from the left
     noButton.style.top = '260px';
   }
   
