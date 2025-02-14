@@ -1,17 +1,27 @@
-// Function to generate random position for "No" button
-function getRandomPosition() {
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-    const randomX = Math.random() * (width - 100); // Subtract button width
-    const randomY = Math.random() * (height - 50); // Subtract button height
+// Function to generate random position for "No" button within the container
+function getRandomPosition(containerRect, buttonRect) {
+    const maxX = containerRect.width - buttonRect.width;
+    const maxY = containerRect.height - buttonRect.height;
+  
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+  
     return { x: randomX, y: randomY };
   }
   
   // Add event listener to "No" button
   const noButton = document.getElementById('noButton');
+  const container = document.querySelector('.container');
+  
   noButton.addEventListener('mouseover', () => {
-    const position = getRandomPosition();
-    noButton.style.position = 'absolute';
+    // Get the dimensions of the container and the button
+    const containerRect = container.getBoundingClientRect();
+    const buttonRect = noButton.getBoundingClientRect();
+  
+    // Generate a random position within the container
+    const position = getRandomPosition(containerRect, buttonRect);
+  
+    // Update the button's position
     noButton.style.left = `${position.x}px`;
     noButton.style.top = `${position.y}px`;
   });
