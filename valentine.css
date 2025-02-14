@@ -48,7 +48,7 @@
     height: 100vh; /* Cover the full viewport height */
     pointer-events: none; /* Ensure hearts don't interfere with clicks */
     overflow: hidden;
-     /* Place behind the main container */
+    z-index: 1; /* Place behind the main container */
   }
   
   .heart {
@@ -59,11 +59,11 @@
   
   @keyframes fall {
     0% {
-      transform: translateY(-100vh);
+      transform: translateY(-100vh); /* Start slightly above the screen */
       opacity: 1;
     }
     100% {
-      transform: translateY(100vh);
+      transform: translateY(100vh); /* End below the screen */
       opacity: 0;
     }
   }
