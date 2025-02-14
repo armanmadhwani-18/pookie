@@ -1,4 +1,10 @@
-body {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
     background-color: #ffe6e6;
     display: flex;
     justify-content: center;
@@ -17,10 +23,9 @@ body {
   
   .heart {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    background-size: cover;
     animation: fall linear infinite;
   }
   
