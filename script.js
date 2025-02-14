@@ -25,18 +25,25 @@ function getRandomPosition(containerRect, noButtonRect, yesButtonRect) {
     const noButton = document.getElementById('noButton');
     const yesButton = document.getElementById('yesButton');
   
-    // Get the dimensions of the container, "No" button, and "Yes" button
-    const containerRect = container.getBoundingClientRect();
-    const noButtonRect = noButton.getBoundingClientRect();
+    // Get the dimensions of the "Yes" button
     const yesButtonRect = yesButton.getBoundingClientRect();
   
-    // Generate a safe initial position for the "No" button
-    const position = getRandomPosition(containerRect, noButtonRect, yesButtonRect);
+    // Set the "No" button's initial position just to the right of the "Yes" button
+    const initialX = yesButtonRect.right + 20; // Add a 20px gap
+    const initialY = yesButtonRect.top;
   
-    // Set the initial position
-    noButton.style.position = 'absolute';
-    noButton.style.left = `${position.x}px`;
-    noButton.style.top = `${position.y}px`;
+    // Ensure the "No" button stays within the container
+    const containerRect = container.getBoundingClientRect();
+    const noButtonRect = noButton.getBoundingClientRect();
+  
+    if (initialX + noButtonRect.width > containerRect.right) {
+      // If the "No" button would go out of bounds, adjust its position
+      noButton.style.left = `${containerRect.right - noButtonRect.width}px`;
+    } else {
+      noButton.style.left = `${initialX}px`;
+    }
+  
+    noButton.style.top = `${initialY}px`;
   }
   
   // Add event listener to "No" button
