@@ -48,7 +48,7 @@
     height: 100vh; /* Cover the full viewport height */
     pointer-events: none; /* Ensure hearts don't interfere with clicks */
     overflow: hidden;
-    z-index: 1; /* Place behind the main container */
+     /* Place behind the main container */
   }
   
   .heart {
