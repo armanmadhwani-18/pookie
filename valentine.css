@@ -7,11 +7,7 @@
   body {
     font-family: 'Arial', sans-serif;
     background-color: #ffe6e6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
-    text-align: center;
     overflow: hidden;
     position: relative; /* Needed for positioning the heart container */
   }
@@ -22,9 +18,12 @@
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
-    position: relative;
+    position: absolute; /* Center the container */
+    top: 50%; /* Move to vertical center */
+    left: 50%; /* Move to horizontal center */
+    transform: translate(-50%, -50%); /* Adjust for exact centering */
     z-index: 2; /* Ensure the container is above the heart animation */
-    width: 350px; /* Adjusted width to fit the resized GIF */
+    width: 350px; /* Fixed width for the container */
     height: auto; /* Height adjusts automatically based on content */
   }
   
