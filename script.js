@@ -28,19 +28,16 @@ function getRandomPosition(containerRect, noButtonRect, yesButtonRect) {
     // Get the dimensions of the container
     const containerRect = container.getBoundingClientRect();
   
-    // Position the "Yes" button 40px from the left and vertically centered
+    // Position the "Yes" button 40px from the left
     yesButton.style.position = 'absolute';
-    yesButton.style.left = '40px'; // 40px from the left
-    yesButton.style.top = `${(containerRect.height - yesButton.offsetHeight) / 2}px`; // Vertically center
+    yesButton.style.left = '130px'; // 40px from the left
+    yesButton.style.top = '260px'; // Vertically center
   
     // Position the "No" button just beside the "Yes" button with a small gap
-    const yesButtonRect = yesButton.getBoundingClientRect();
-    const initialX = yesButtonRect.right + 10; // Add a 10px gap
-    const initialY = yesButtonRect.top;
-  
+    
     noButton.style.position = 'absolute';
-    noButton.style.left = `${initialX}px`;
-    noButton.style.top = `${initialY}px`;
+    noButton.style.right = '160px'; // 40px from the left
+    noButton.style.top = '260px';
   }
   
   // Add event listener to "No" button
@@ -58,7 +55,7 @@ function getRandomPosition(containerRect, noButtonRect, yesButtonRect) {
     const position = getRandomPosition(containerRect, noButtonRect, yesButtonRect);
   
     // Update the button's position
-    noButton.style.left = `${position.x}px`;
+    noButton.style.right = `${position.x}px`;
     noButton.style.top = `${position.y}px`;
   });
   
