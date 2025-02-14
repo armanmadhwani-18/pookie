@@ -19,30 +19,27 @@ function getRandomPosition(containerRect, noButtonRect, yesButtonRect) {
     return { x: randomX, y: randomY };
   }
   
-  // Set initial position for the "No" button
-  function setInitialNoButtonPosition() {
+  // Set initial position for the "Yes" and "No" buttons
+  function setInitialButtonPositions() {
     const container = document.querySelector('.container');
-    const noButton = document.getElementById('noButton');
     const yesButton = document.getElementById('yesButton');
+    const noButton = document.getElementById('noButton');
   
-    // Get the dimensions of the "Yes" button
-    const yesButtonRect = yesButton.getBoundingClientRect();
-  
-    // Set the "No" button's initial position just to the right of the "Yes" button
-    const initialX = yesButtonRect.right - 380; // Add a 10px gap
-    const initialY = yesButtonRect.top - 180;
-  
-    // Ensure the "No" button stays within the container
+    // Get the dimensions of the container
     const containerRect = container.getBoundingClientRect();
-    const noButtonRect = noButton.getBoundingClientRect();
   
-    if (initialX + noButtonRect.width > containerRect.right) {
-      // If the "No" button would go out of bounds, adjust its position
-      noButton.style.left = `${containerRect.right - noButtonRect.width}px`;
-    } else {
-      noButton.style.left = `${initialX}px`;
-    }
+    // Position the "Yes" button 40px from the left
+    yesButton.style.position = 'absolute';
+    yesButton.style.left = '40px'; // 40px from the left
+    yesButton.style.top = `${(containerRect.height - yesButton.offsetHeight) / 2}px`; // Vertically center
   
+    // Position the "No" button just beside the "Yes" button with a small gap
+    const yesButtonRect = yesButton.getBoundingClientRect();
+    const initialX = yesButtonRect.right + 10; // Add a 10px gap
+    const initialY = yesButtonRect.top;
+  
+    noButton.style.position = 'absolute';
+    noButton.style.left = `${initialX}px`;
     noButton.style.top = `${initialY}px`;
   }
   
@@ -78,7 +75,7 @@ function getRandomPosition(containerRect, noButtonRect, yesButtonRect) {
     }, 3000); // 3 seconds delay
   });
   
-  // Set the initial position of the "No" button when the page loads
+  // Set the initial positions of the buttons when the page loads
   window.addEventListener('load', () => {
-    setInitialNoButtonPosition();
+    setInitialButtonPositions();
   });
