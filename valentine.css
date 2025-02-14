@@ -1,0 +1,36 @@
+body {
+    background-color: #ffe6e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  h1 {
+    position: absolute;
+    font-size: 3rem;
+    color: #ff4d4d;
+    z-index: 10;
+  }
+  
+  .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    animation: fall linear infinite;
+  }
+  
+  @keyframes fall {
+    0% {
+      transform: translateY(-100vh);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+  }
