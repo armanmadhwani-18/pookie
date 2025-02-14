@@ -17,19 +17,12 @@ const heartImages = [
     const randomHeartImage = heartImages[Math.floor(Math.random() * heartImages.length)];
     heart.style.backgroundImage = `url(${randomHeartImage})`;
   
-    const size = Math.random() * 110 + 20; // Random size between 20px and 130px
+    const size = Math.random() * 130 + 20; // Random size between 20px and 50px
     heart.style.width = `${size}px`;
     heart.style.height = `${size}px`;
   
-    // Center-align the horizontal position
-    const centerX = window.innerWidth / 2; // Center of the screen
-    const spread = 300; // Spread of the hearts around the center (adjust as needed)
-    const x = Math.random() * spread - spread / 2 + centerX; // Randomize within the spread
+    const x = Math.random() * window.innerWidth;
     heart.style.left = `${x}px`;
-  
-    // Randomize vertical start position slightly above the top
-    const y = Math.random() * -100 - 50; // Start slightly above the top
-    heart.style.top = `${y}px`;
   
     const duration = Math.random() * 5 + 3; // Random duration between 3s and 8s
     heart.style.animationDuration = `${duration}s`;
@@ -42,7 +35,5 @@ const heartImages = [
     }, duration * 1000);
   }
   
-  // Start generating hearts as soon as the page loads
-  window.addEventListener('load', () => {
-    setInterval(createHeart, 200); // Generate hearts continuously
-  });
+  // Generate hearts continuously
+  setInterval(createHeart, 200);
